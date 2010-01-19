@@ -24,7 +24,7 @@ public class MockController
 		Map model = null;
         GroovyShell shell = new GroovyShell();
         try {
-            model = (Map) shell.evaluate(new File("d:/code/joust.war/WEB-INF/mock"+jspName+".mock"));
+            model = (Map) shell.evaluate(new File(request.getSession().getServletContext().getRealPath("")+"/WEB-INF/mock"+jspName+".mock"));
         }
         catch (Exception e) {
             throw new RuntimeException(e);
