@@ -1,1 +1,2 @@
-This directory contents ought to be treated as the joust.war file.
+[To run] - Copy this directory "joust" into your {tomcat.home}/webapps/ directory. (i.e. This is the makeup of a joust.war file.)
+[To compile] - Set your output directory for .class files to "joust"/WEB-INF/classes
