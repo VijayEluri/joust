@@ -3,7 +3,6 @@ package org.joust.controller;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 import org.joust.model.PokerModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,7 @@ public class HelloController
 	@RequestMapping("/hello.spr")
 	public ModelAndView view()
     {
-		ModelAndView mav = new ModelAndView("/hello.jsp");
+		ModelAndView mav = new ModelAndView("hello");
 		mav.addObject("helloMsg", "Hello from HelloController real data.");
 		Map model = new LinkedHashMap();
 		ArrayList listOfGames = new ArrayList();
