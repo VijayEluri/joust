@@ -30,7 +30,6 @@ public class MockController
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
-
 		model.putAll(getValuesFromParameters(request.getParameterMap()));
 		ModelAndView mav = new ModelAndView(viewName.replace(".mock", ""), model);
 		return mav;
