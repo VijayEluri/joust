@@ -14,7 +14,7 @@ public class HelloController
 	@RequestMapping("/hello.spr")
 	public ModelAndView view()
     {
-		ModelAndView mav = new ModelAndView("hello");
+		ModelAndView mav = new ModelAndView("jsp/hello");
 		mav.addObject("helloMsg", "Hello from HelloController real data.");
 		Map model = new LinkedHashMap();
 		ArrayList listOfGames = new ArrayList();
