@@ -5,12 +5,4 @@
          version="2.4">
 	<display-name>App</display-name>
 	<description>The real app</description>
-	<servlet>
-		<servlet-name>app</servlet-name>
-		<servlet-class>org.joust.MyAppServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>app</servlet-name>
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
 </web-app>
