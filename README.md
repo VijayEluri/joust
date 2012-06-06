@@ -9,6 +9,7 @@ For an example, browse to:
  </pre>
  
 [To use]
+=======
  - Merge this src/test folder with the src/test folder in your project.
  - Merge this pom.xml with the pom.xml in your project. 
  - You do not need src/main - that's just for the example.
