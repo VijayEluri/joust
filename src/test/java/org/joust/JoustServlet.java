@@ -15,14 +15,13 @@ import org.yaml.snakeyaml.Yaml;
 public class JoustServlet extends HttpServlet {
 	private static final long serialVersionUID = -4701849850769353437L;
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String yamls = request.getParameter("yaml");
 		if (yamls != null) {
 			String[] yamlFiles = yamls.split(",");
 			for (String yamlFile : yamlFiles) {
-				Map<String, Object> data = getData(yamlFile);
+				Map<String, Object> data = yamlToMap(yamlFile);
 				for (String key : data.keySet()) {
 					request.setAttribute(key, data.get(key));
 				}
@@ -30,10 +29,22 @@ public class JoustServlet extends HttpServlet {
 		}
 		String jspPath = request.getRequestURI().replace("/joust/", "/");
 		request.setAttribute("viewName", jspPath);
+		setOtherAttributes(request);
 		request.getRequestDispatcher("/joustLayout.jsp").forward(request, response);
 	}
 
-	public static Map<String, Object> getData(String yamlFile) {
+	/**
+	 * Override to set app-specific attributes
+	 * @param request
+	 */
+	protected void setOtherAttributes(HttpServletRequest request) { }
+
+	/**
+	 * Utility method for retrieving a YAML file into a map.
+	 * @param yamlFile
+	 * @return
+	 */
+	public static Map<String, Object> yamlToMap(String yamlFile) {
 		InputStream source = JoustServlet.class.getResourceAsStream("/yamls/" + yamlFile);
 		Map<String, Object> data = new HashMap();
 		if (source != null) {
