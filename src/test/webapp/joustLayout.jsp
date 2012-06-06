@@ -1,8 +1,8 @@
 <html>
 <head>
-    <!-- include any css and js -->
+<!-- include any css and js -->
 </head>
 <body>
-    <jsp:include page="${viewName}"/>
+	<jsp:include page="${viewName}" />
 </body>
 </html>

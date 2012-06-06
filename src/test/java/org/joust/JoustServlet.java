@@ -35,12 +35,15 @@ public class JoustServlet extends HttpServlet {
 
 	/**
 	 * Override to set app-specific attributes
+	 * 
 	 * @param request
 	 */
-	protected void setOtherAttributes(HttpServletRequest request) { }
+	protected void setOtherAttributes(HttpServletRequest request) {
+	}
 
 	/**
 	 * Utility method for retrieving a YAML file into a map.
+	 * 
 	 * @param yamlFile
 	 * @return
 	 */

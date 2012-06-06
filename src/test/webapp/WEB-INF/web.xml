@@ -3,14 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
-	<display-name>Joust</display-name>
-	<description>A JSP Stub Framework</description>
-	<servlet>
-		<servlet-name>joust</servlet-name>
-		<servlet-class>org.joust.JoustServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>joust</servlet-name>
-		<url-pattern>joust/*</url-pattern>
-	</servlet-mapping>
+		<display-name>Joust</display-name>
+		<description>A JSP Stub Framework</description>
+		<servlet>
+				<servlet-name>joust</servlet-name>
+				<servlet-class>org.joust.JoustServlet</servlet-class>
+		</servlet>
+		<servlet>
+				<servlet-name>urlHit</servlet-name>
+				<servlet-class>org.joust.UrlHitServlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+				<servlet-name>joust</servlet-name>
+				<url-pattern>joust/*</url-pattern>
+		</servlet-mapping>
+		<servlet-mapping>
+				<servlet-name>urlHit</servlet-name>
+				<url-pattern>*.do</url-pattern>
+		</servlet-mapping>
 </web-app>
