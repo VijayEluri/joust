@@ -1,6 +1,6 @@
 [To run]
 =======
- - mvn test joust:run
+ - mvn test jetty:run
  
 Now you can test any JSP behind the /joust/ path and by specifying a data YAML file.    
 For an example, browse to:
