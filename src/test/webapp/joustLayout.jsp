@@ -1,6 +1,6 @@
 <html>
 <head>
-<!-- include any css and js -->
+  <%=org.joust.ConfigServlet.HEAD_HTML%>
 </head>
 <body>
 	<jsp:include page="${viewName}" />

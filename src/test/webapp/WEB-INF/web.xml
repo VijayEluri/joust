@@ -10,6 +10,10 @@
 				<servlet-class>org.joust.JoustServlet</servlet-class>
 		</servlet>
 		<servlet>
+        <servlet-name>config</servlet-name>
+        <servlet-class>org.joust.ConfigServlet</servlet-class>
+    </servlet>
+		<servlet>
 				<servlet-name>urlHit</servlet-name>
 				<servlet-class>org.joust.UrlHitServlet</servlet-class>
 		</servlet>
@@ -17,6 +21,10 @@
 				<servlet-name>joust</servlet-name>
 				<url-pattern>joust/*</url-pattern>
 		</servlet-mapping>
+		<servlet-mapping>
+        <servlet-name>config</servlet-name>
+        <url-pattern>config/*</url-pattern>
+    </servlet-mapping>
 		<servlet-mapping>
 				<servlet-name>urlHit</servlet-name>
 				<url-pattern>*.do</url-pattern>
