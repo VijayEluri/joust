@@ -3,3 +3,10 @@ people:
   - name: Paul
   - name: Mary
   - name: John
+places:
+  - location:
+    latitude: 40
+    longitude: 50
+  - location: 
+    latitude: 80
+    longitude: 70
