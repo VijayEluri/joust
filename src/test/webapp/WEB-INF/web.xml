@@ -13,6 +13,16 @@
     <servlet-name>urlHit</servlet-name>
     <servlet-class>org.joust.UrlHitServlet</servlet-class>
   </servlet>
+  <!-- Needed to unlock .css files for change while server is running -->
+  <servlet>
+    <servlet-name>default</servlet-name>
+    <servlet-class>org.mortbay.jetty.servlet.DefaultServlet</servlet-class>
+    <init-param>
+      <param-name>useFileMappedBuffer</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>  
   <servlet-mapping>
     <servlet-name>joust</servlet-name>
     <url-pattern>joust/*</url-pattern>

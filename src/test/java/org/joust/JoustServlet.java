@@ -17,17 +17,23 @@ public class JoustServlet extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String yamls = request.getParameter("yaml");
-		if (yamls != null) {
-			String[] yamlFiles = yamls.split(",");
-			for (String yamlFile : yamlFiles) {
-				Map<String, Object> data = yamlToMap(yamlFile);
-				for (String key : data.keySet()) {
-					request.setAttribute(key, data.get(key));
-				}
-			}
-		}
 		String jspPath = request.getRequestURI().replace("/joust/", "/");
+		String yamls = request.getParameter("yaml");
+
+		if (yamls == null) {
+			yamls = jspPath;
+		}
+		else {
+			yamls += ","+jspPath;
+		}
+		String[] yamlFiles = yamls.split(",");
+		for (String yamlFile : yamlFiles) {
+			Map<String, Object> data = yamlToMap(yamlFile);
+			for (String key : data.keySet()) {
+				request.setAttribute(key, data.get(key));
+ 			}
+ 		}
+
 		request.setAttribute("viewName", jspPath);
 		setOtherAttributes(request);
 		request.getRequestDispatcher("/joustLayout.jsp").forward(request, response);
